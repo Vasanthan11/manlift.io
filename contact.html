@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================
+       META + TITLE
+  ========================================== -->
+  <meta charset="UTF-8">
+  <title>Contact Us | Access Equipment Rentals in Kerala</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- GOOGLE FONT: POPPINS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================================
+       STYLES
+  ========================================== -->
+  <style>
+    :root {
+      --clr-bg-main: #FFECC0;
+      --clr-bg-dark: #211628;
+      --clr-primary: #5D2F77;
+      --clr-primary-soft: #8B5CA3;
+      --clr-accent: #F7D4D4;
+      --clr-white: #ffffff;
+      --clr-text-main: #2A2224;
+    }
+
+    /* RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--clr-bg-main);
+      color: var(--clr-text-main);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    main {
+      margin-top: 80px; /* space for navbar fragment */
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* BUTTONS – matches theme convention */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--clr-primary);
+      outline: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* On light background: hover to brand colour with white text */
+    .btn:hover {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      box-shadow: 0 10px 24px rgba(93, 47, 119, 0.35);
+    }
+
+    .btn-on-dark {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      border-color: var(--clr-primary);
+    }
+
+    /* On dark background: hover to white with brand text */
+    .btn-on-dark:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      box-shadow: none;
+    }
+
+    .btn-ghost-dark {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.7);
+      color: var(--clr-white);
+    }
+
+    .btn-ghost-dark:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      border-color: var(--clr-white);
+    }
+
+    /* SECTION HEADINGS */
+    .section-heading {
+      margin-bottom: 2rem;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      color: var(--clr-bg-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: #4b3b43;
+      max-width: 36rem;
+    }
+
+    .section-heading.center {
+      text-align: center;
+    }
+
+    .section-heading.center .section-sub {
+      margin: 0.4rem auto 0;
+    }
+
+    /* =========================================
+       SECTION 1: CONTACT HERO BANNER
+    ========================================== */
+    .hero {
+      /* fixed: banner now uses cream/rose theme instead of dark gradient */
+       background: radial-gradient(circle at top left, rgba(139, 174, 102, 0.9), rgba(27, 33, 26, 0.96));
+      opacity: 0.96; /* lets the background image show lightly */
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-card {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 28px;
+      background: rgba(17, 10, 24, 0.96);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+      gap: 2.6rem;
+      padding: 3rem 2.6rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      color: var(--clr-white);
+    }
+
+    .hero-bg-shape {
+      position: absolute;
+      inset: 0;
+      opacity: 0.16;
+      background-image: url("images/contact-team.jpg"); /* replace with your own image */
+      background-size: cover;
+      background-position: center;
+      mix-blend-mode: screen;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      color: var(--clr-accent);
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-text {
+      font-size: 0.96rem;
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-contact-lines {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-contact-line {
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-contact-line a {
+      color: var(--clr-accent);
+      text-decoration: none;
+    }
+
+    .hero-contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-aside {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid rgba(247, 212, 212, 0.6);
+      backdrop-filter: blur(8px);
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.94);
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .hero-aside-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-aside-list {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.86rem;
+    }
+
+    .hero-aside-note {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+    }
+
+    /* =========================================
+       SECTION 2: CONTACT CHANNELS
+    ========================================== */
+    .channels {
+      background-color: var(--clr-bg-main);
+    }
+
+    .channels-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .channel-card {
+      background-color: var(--clr-white);
+      border-radius: 20px;
+      padding: 1.4rem 1.2rem 1.5rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(93, 47, 119, 0.08);
+      font-size: 0.88rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .channel-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+    }
+
+    .channel-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .channel-text {
+      color: #4b3b43;
+    }
+
+    .channel-line {
+      font-size: 0.9rem;
+    }
+
+    .channel-line a {
+      color: var(--clr-primary);
+      text-decoration: none;
+    }
+
+    .channel-line a:hover {
+      text-decoration: underline;
+    }
+
+    .channel-footer {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #8c8089;
+    }
+
+    /* =========================================
+       SECTION 3: QUICK QUESTIONS STRIP
+    ========================================== */
+    .questions {
+      background-color: var(--clr-bg-main);
+    }
+
+    .questions-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.1rem;
+      align-items: center;
+    }
+
+    .questions-text {
+      font-size: 0.9rem;
+      color: #4b3b43;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .questions-bullets {
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.88rem;
+    }
+
+    .questions-bullets span::before {
+      content: "• ";
+    }
+
+    .questions-card {
+      border-radius: 20px;
+      background-color: var(--clr-white);
+      border: 1px solid rgba(93, 47, 119, 0.12);
+      padding: 1.3rem 1.2rem;
+      font-size: 0.88rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+    }
+
+    .questions-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .questions-card-text {
+      color: #4b3b43;
+      margin-bottom: 0.75rem;
+    }
+
+    .questions-card-meta {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8c8089;
+      margin-bottom: 0.7rem;
+    }
+
+    /* =========================================
+       SECTION 4: INLINE FORM (form.html fragment)
+    ========================================== */
+    .inline-form {
+      background-color: var(--clr-white);
+    }
+
+    .inline-form-card {
+      /* max-width: 900px; */
+      margin: 0 auto;
+      /* border-radius: 24px; */
+      /* background-color: var(--clr-bg-main); */
+      /* border: 1px solid rgba(93, 47, 119, 0.18); */
+      /* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18); */
+      /* padding: 2rem 1.8rem; */
+    }
+
+    #inline-form-slot > * {
+      width: 100%;
+    }
+
+    /* =========================================
+       BOTTOM CTA
+    ========================================== */
+    .bottom-cta {
+      background-color: var(--clr-bg-dark);
+      color: var(--clr-white);
+      text-align: center;
+      padding: 3rem 1.5rem 3.2rem;
+    }
+
+    .bottom-cta .container {
+      max-width: 720px;
+    }
+
+    .bottom-cta-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .bottom-cta-text {
+      font-size: 0.95rem;
+      margin-bottom: 1.1rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .bottom-cta-meta {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1rem;
+    }
+
+    .bottom-cta-line {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .bottom-cta-line a {
+      color: var(--clr-accent);
+      text-decoration: none;
+    }
+
+    .bottom-cta-line a:hover {
+      text-decoration: underline;
+    }
+
+    .bottom-cta-btn-row {
+      margin-top: 1.4rem;
+    }
+
+    /* MODAL FORM POPUP */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 2000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 95vh;
+      overflow: auto;
+      border-radius: 22px;
+      background: transparent;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      z-index: 10;
+      border: none;
+      background: var(--clr-bg-dark);
+      color: var(--clr-white);
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content-wrapper {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-aside {
+        margin-top: 1.4rem;
+      }
+
+      .channels-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .questions-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 3rem 1.25rem;
+      }
+
+      .hero-inner {
+        padding: 2.6rem 1.8rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .channels-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding-top: 4.1rem;
+        padding-bottom: 3.2rem;
+      }
+
+      .hero-inner {
+        padding: 2.4rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR PLACEHOLDER -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- =========================================
+         SECTION 1: CONTACT HERO BANNER
+    ========================================== -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-bg-shape"></div>
+
+        <div class="hero-inner">
+          <!-- LEFT -->
+          <div>
+            <div class="hero-kicker">
+              CONTACT • BOOM LIFTS • SCISSOR LIFTS • MAN LIFTS • CHERRY PICKERS
+            </div>
+            <h1 class="hero-title">
+              Share your height access plan and we’ll help shape the rental.
+            </h1>
+            <p class="hero-text">
+              A few lines about your site, working height and approximate schedule are enough for us to
+              suggest boom lifts, scissor lifts, man lifts or cherry pickers that match what you’re trying
+              to reach safely.
+            </p>
+            <p class="hero-meta">
+              PROJECT-BY-PROJECT SUPPORT · PRACTICAL RECOMMENDATIONS · CLEAR QUOTES
+            </p>
+
+            <div class="hero-cta-row">
+              <button class="btn btn-on-dark js-open-form">
+                Click here to send your contact details and requirement
+              </button>
+            </div>
+
+            <div class="hero-contact-lines">
+              <p class="hero-contact-line">
+                CALL: <a href="tel:+919999999999">+91 99999 99999</a>
+              </p>
+              <p class="hero-contact-line">
+                EMAIL: <a href="mailto:info@boomliftrentkerala.com">info@boomliftrentkerala.com</a>
+              </p>
+              <p class="hero-contact-line">
+                HOURS: Monday to Saturday · 9:00 AM – 7:00 PM
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT ASIDE -->
+          <aside class="hero-aside">
+            <h2 class="hero-aside-title">What to include in your first message.</h2>
+            <div class="hero-aside-list">
+              <span>• City, site type and a short line on what work you want to complete at height.</span>
+              <span>• Approximate working height and whether you have clear access from gate to work area.</span>
+              <span>• If you prefer self-operated machines or want our team to send trained operators.</span>
+            </div>
+            <p class="hero-aside-note">
+              Click here in the form to attach a simple sketch or photo if that’s easier than explaining in words.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: CONTACT CHANNELS
+    ========================================== -->
+    <section class="channels">
+      <div class="container">
+        <header class="section-heading">
+          <p class="section-tag">Ways to reach us</p>
+          <h2 class="section-title">Choose the contact route that suits you best</h2>
+          <p class="section-sub">
+            Use whichever channel is quickest for you. We keep one team responsible for all access equipment
+            enquiries so you don’t have to repeat details.
+          </p>
+        </header>
+
+        <div class="channels-grid">
+          <!-- CARD 1 -->
+          <article class="channel-card">
+            <p class="channel-label">Option 01</p>
+            <h3 class="channel-title">Quick call for immediate questions</h3>
+            <p class="channel-text">
+              Best when you want to sense-check an idea, compare options for a live site or discuss timing
+              before sending details.
+            </p>
+            <p class="channel-line">
+              CALL: <a href="tel:+919999999999">+91 99999 99999</a>
+            </p>
+            <p class="channel-footer">
+              Immediate clarifications • Live projects
+            </p>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="channel-card">
+            <p class="channel-label">Option 02</p>
+            <h3 class="channel-title">Structured enquiry by email</h3>
+            <p class="channel-text">
+              Useful when you have drawings, photos or internal approvals and want a written response for
+              boom lift, scissor lift, man lift or cherry picker options.
+            </p>
+            <p class="channel-line">
+              EMAIL: <a href="mailto:info@boomliftrentkerala.com">info@boomliftrentkerala.com</a>
+            </p>
+            <p class="channel-footer">
+              Attach layouts • Share scopes • Request quotes
+            </p>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="channel-card">
+            <p class="channel-label">Option 03</p>
+            <h3 class="channel-title">Click here to use our enquiry form</h3>
+            <p class="channel-text">
+              The form guides you through height, access, timeline and operator needs so we receive all key
+              details in one go.
+            </p>
+            <button class="btn js-open-form">
+              Click here to open the contact & rental enquiry form
+            </button>
+            <p class="channel-footer">
+              Guided questions • Saves back-and-forth
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3: QUICK QUESTIONS STRIP
+    ========================================== -->
+    <section class="questions">
+      <div class="questions-inner">
+        <!-- LEFT -->
+        <div class="questions-text">
+          <header class="section-heading" style="margin-bottom:1.1rem;">
+            <p class="section-tag">Not sure what to ask?</p>
+            <h2 class="section-title">A few prompts you can use in your message</h2>
+          </header>
+          <p>
+            You don’t need a perfect technical brief to start a conversation. Even a simple description
+            helps us respond with practical suggestions.
+          </p>
+          <div class="questions-bullets">
+            <span>“We need to reach approximately ___ metres to work on ___.”</span>
+            <span>“The work area is indoors/outdoors with floor type ___.”</span>
+            <span>“We expect the job to run from ___ to ___ and may need machines in shifts.”</span>
+            <span>“Please suggest whether a boom lift, scissor lift, man lift or cherry picker fits best.”</span>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <aside class="questions-card">
+          <h3 class="questions-card-title">Click here if you want us to review a plan you already have</h3>
+          <p class="questions-card-text">
+            If you’re comparing options from different sources, you can still send us your plan. We’ll
+            highlight any gaps related to reach, site access or safety that you may want to address.
+          </p>
+          <p class="questions-card-meta">
+            PLAN REVIEW • SECOND OPINION • RISK CHECKS
+          </p>
+          <button class="btn js-open-form">
+            Click here to upload your outline and ask for a review
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: INLINE FORM (form.html visible on page)
+    ========================================== -->
+    <section class="inline-form">
+      <div class="container">
+        <header class="section-heading center">
+          <p class="section-tag">Send your details online</p>
+          <h2 class="section-title">Use the enquiry form right on this page</h2>
+          <p class="section-sub">
+            If it’s easier, fill out the form below with your contact details and access requirement.
+            The same form also opens in the popup when you click any “Click here” enquiry buttons.
+          </p>
+        </header>
+
+        <div class="inline-form-card">
+          <div id="inline-form-slot">
+            <!-- form.html will be injected here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         BOTTOM CTA
+    ========================================== -->
+    <section class="bottom-cta">
+      <div class="container">
+        <h2 class="bottom-cta-title">
+          Ready to turn your height access idea into a confirmed plan?
+        </h2>
+        <p class="bottom-cta-text">
+          Click below, share a short description of your work at height and we’ll help you choose between
+          boom lifts, scissor lifts, man lifts and cherry pickers, with deployment dates that match your
+          project schedule.
+        </p>
+
+        <p class="bottom-cta-meta">
+          ONE ENQUIRY · CLEAR OPTIONS · SUPPORT UNTIL DEMOBILISATION
+        </p>
+
+        <p class="bottom-cta-line">
+          CALL: <a href="tel:+919999999999">+91 99999 99999</a>
+        </p>
+        <p class="bottom-cta-line">
+          EMAIL: <a href="mailto:info@boomliftrentkerala.com">info@boomliftrentkerala.com</a>
+        </p>
+
+        <div class="bottom-cta-btn-row">
+          <button class="btn btn-on-dark js-open-form">
+            Click here to send a contact & rental enquiry now
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER PLACEHOLDER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- POPUP FORM MODAL -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="formModalClose" aria-label="Close form">&times;</button>
+      <div class="modal-content-wrapper" id="formModalContent">
+        <!-- form.html will be injected here as well -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       SCRIPTS
+  ========================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Load navbar
+      fetch("navbar.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading navbar.html", err);
+        });
+
+      // Load footer
+      fetch("footer.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading footer.html", err);
+        });
+
+      // Setup popup + inline form
+      setupFormPopup();
+      loadInlineForm();
+    });
+
+    // POPUP FORM LOGIC (loads form.html fragment into modal)
+    function setupFormPopup() {
+      var modal = document.getElementById("formModal");
+      var modalClose = document.getElementById("formModalClose");
+      var modalContent = document.getElementById("formModalContent");
+      var formLoaded = false;
+
+      document.addEventListener("click", function (event) {
+        var target = event.target;
+        if (target.classList.contains("js-open-form")) {
+          event.preventDefault();
+          openModal();
+        }
+      });
+
+      function openModal() {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        if (!formLoaded) {
+          fetch("form.html")
+            .then(function (res) { return res.text(); })
+            .then(function (html) {
+              modalContent.innerHTML = html;
+              formLoaded = true;
+            })
+            .catch(function () {
+              modalContent.innerHTML =
+                "<div style='background:#ffffff;padding:2rem;border-radius:1rem;color:#211628;'>Unable to load the enquiry form right now.</div>";
+            });
+        }
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      modalClose.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+    }
+
+    // INLINE FORM: load form.html into the page as a fragment
+    function loadInlineForm() {
+      var slot = document.getElementById("inline-form-slot");
+      if (!slot) return;
+
+      fetch("form.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          slot.innerHTML = html;
+        })
+        .catch(function () {
+          slot.innerHTML =
+            "<div style='background:#ffffff;padding:2rem;border-radius:1rem;color:#211628;text-align:center;'>Unable to load the enquiry form right now. Please try again or use the call / email options above.</div>";
+        });
+    }
+  </script>
+</body>
+</html>

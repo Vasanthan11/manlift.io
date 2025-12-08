@@ -1,0 +1,178 @@
+<!-- NAVBAR FILE – navbar.html -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- LOGO IMAGE -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Manlifts Logo">
+      </a>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="navLinks">
+      <!-- CLOSE BUTTON (only for mobile panel) -->
+      <li class="close-btn" onclick="toggleMenu()">✖</li>
+
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="boom-lift-rentals.html">BOOM LIFT RENTALS</a></li>
+      <li><a href="scissor-lift-rentals.html">SCISSOR LIFT RENTALS</a></li>
+      <li><a href="blog.html">BLOG</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+      <li>
+        <a href="tel:+919999999999" class="call-btn">Click To Call Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  :root {
+    --clr-bg-dark: #1B211A;
+    --clr-primary: #628141;
+    --clr-primary-light: #8BAE66;
+    --clr-accent: #EBD5AB;
+    --clr-white: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .navbar {
+    width: 100%;
+    background: var(--clr-bg-dark);
+    color: var(--clr-white);
+    padding: 12px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* LOGO IMAGE */
+  .logo img {
+    height: 46px;
+    width: auto;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--clr-white);
+    font-weight: 500;
+    padding: 6px 10px;
+    transition: 0.3s;
+  }
+
+  .nav-links li a:hover {
+    color: var(--clr-accent);
+  }
+
+  /* CALL BUTTON */
+  .call-btn {
+    background: var(--clr-primary);
+    padding: 10px 18px;
+    margin: 0 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    display: inline-block;
+    color: var(--clr-white);
+    border: 1px solid transparent;
+    transition: 0.3s;
+  }
+
+  .call-btn:hover {
+    background: var(--clr-white);
+    color: var(--clr-bg-dark);
+    border-color: var(--clr-primary);
+  }
+
+  .hamburger {
+    font-size: 32px;
+    cursor: pointer;
+    display: none;
+    user-select: none;
+    color: var(--clr-accent);
+  }
+
+  /* close button hidden by default (desktop) */
+  .close-btn {
+    display: none;
+  }
+
+  /* =============== MOBILE =============== */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      flex-direction: column;
+      width: 75%;
+      height: 100vh;
+      background: var(--clr-bg-dark);
+      padding-top: 80px;
+      text-align: center;
+      transition: right 0.4s ease;
+    }
+
+    .nav-links.open {
+      right: 0;
+    }
+
+    .nav-links li {
+      margin: 15px 0;
+      width: 100%;
+    }
+
+    .nav-links li a {
+      display: block;
+      font-size: 18px;
+      padding: 12px;
+    }
+
+    /* show X only when panel is open */
+    .nav-links.open .close-btn {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--clr-accent);
+    }
+  }
+</style>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('open');
+  }
+</script>

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================
+       META + TITLE
+  ========================================== -->
+  <meta charset="UTF-8">
+  <title>Blog | Manlifts | Work at Height Guides & Updates</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONT: POPPINS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================================
+       STYLES
+  ========================================== -->
+  <style>
+    :root {
+      --clr-bg-dark: #1B211A;
+      --clr-primary: #628141;
+      --clr-primary-light: #8BAE66;
+      --clr-accent: #EBD5AB;
+      --clr-white: #ffffff;
+    }
+
+    /* RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--clr-accent);
+      color: var(--clr-bg-dark);
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+
+    main {
+      margin-top: 80px; /* space for fixed navbar */
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--clr-primary);
+      outline: none;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+      white-space: normal;          /* allow wrapping */
+      text-align: center;           /* center multi-line text */
+      line-height: 1.3;
+    }
+
+    .btn:hover {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      box-shadow: 0 10px 22px rgba(27, 33, 26, 0.25);
+    }
+
+    .btn-on-dark {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      border-color: transparent;
+    }
+
+    .btn-on-dark:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      border-color: var(--clr-primary);
+      box-shadow: none;
+    }
+
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--clr-white);
+      border-color: transparent;
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      border-color: var(--clr-primary);
+    }
+
+    /* SHARED SECTION HEADING */
+    .section-heading {
+      margin-bottom: 2.3rem;
+    }
+
+    .section-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      color: var(--clr-bg-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.94rem;
+      color: #4b443b;
+      max-width: 34rem;
+    }
+
+    /* =========================================
+       HERO
+    ========================================== */
+    .hero {
+      background-color: var(--clr-bg-dark);
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 26px;
+      overflow: hidden;
+      background-image: url("images/blog-hero-manlifts.jpg"); /* replace with your image */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-inner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(27, 33, 26, 0.97), rgba(98, 129, 65, 0.9));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.6rem;
+      padding: 3rem 2.5rem;
+      color: var(--clr-white);
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title {
+      font-size: 2.35rem;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-text {
+      font-size: 0.96rem;
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .hero-aside {
+      background-color: rgba(27, 33, 26, 0.9);
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid rgba(235, 213, 171, 0.6);
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.88rem;
+    }
+
+    .hero-aside-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-aside-text {
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .hero-aside-list {
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-aside-note {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--clr-accent);
+      margin-top: 0.3rem;
+    }
+
+    /* =========================================
+       SECTION 2: LATEST ARTICLES (GRID)
+    ========================================== */
+    .latest-articles {
+      background-color: var(--clr-accent);
+    }
+
+    .latest-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+      gap: 2.3rem;
+      align-items: flex-start;
+      margin-top: 1.3rem;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .article-card {
+      background-color: var(--clr-white);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(27, 33, 26, 0.12);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      font-size: 0.86rem;
+    }
+
+    .article-img {
+      height: 150px;
+      overflow: hidden;
+    }
+
+    .article-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-body {
+      padding: 0.9rem 0.95rem 1.1rem;
+      display: grid;
+      gap: 0.25rem;
+      color: #423d34;
+    }
+
+    .article-tag {
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+    }
+
+    .article-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .article-text {
+      font-size: 0.86rem;
+      color: #4b443b;
+    }
+
+    .article-meta {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6a6358;
+      margin-top: 0.3rem;
+    }
+
+    .article-cta {
+      margin-top: 0.6rem;
+    }
+
+    /* RIGHT COLUMN: SHORT NOTES / TIPS */
+    .notes-panel {
+      border-radius: 20px;
+      background-color: var(--clr-white);
+      border: 1px solid rgba(27, 33, 26, 0.12);
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+    }
+
+    .notes-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: var(--clr-bg-dark);
+    }
+
+    .notes-text {
+      font-size: 0.88rem;
+      color: #484137;
+      margin-bottom: 0.8rem;
+    }
+
+    .notes-list {
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #433d35;
+      margin-bottom: 0.9rem;
+    }
+
+    .notes-item-label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .notes-footer {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: 0.7rem;
+    }
+
+    /* =========================================
+       SECTION 3: TOPIC CATEGORIES / ICON ROW
+    ========================================== */
+    .topics {
+      background-color: var(--clr-white);
+    }
+
+    .topics-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.4rem;
+    }
+
+    .topic-card {
+      border-radius: 18px;
+      padding: 1rem 0.9rem 1.1rem;
+      background-color: var(--clr-accent);
+      border: 1px solid rgba(27, 33, 26, 0.12);
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.86rem;
+      color: #433c33;
+    }
+
+    .topic-head {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .topic-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background-color: var(--clr-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--clr-white);
+      flex-shrink: 0;
+    }
+
+    .topic-title {
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .topic-text {
+      font-size: 0.84rem;
+    }
+
+    /* =========================================
+       SECTION 4: PROJECT STORIES (HORIZONTAL CARDS)
+    ========================================== */
+    .stories {
+      background-color: var(--clr-accent);
+    }
+
+    .stories-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .stories-list {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 1.3rem;
+    }
+
+    .story-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
+      gap: 1.3rem;
+      border-radius: 20px;
+      background-color: var(--clr-white);
+      border: 1px solid rgba(27, 33, 26, 0.12);
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+    }
+
+    .story-img {
+      height: 210px;
+      overflow: hidden;
+    }
+
+    .story-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .story-body {
+      padding: 1.1rem 1.2rem 1.3rem;
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      color: #3f3a32;
+    }
+
+    .story-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+    }
+
+    .story-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .story-text {
+      font-size: 0.88rem;
+    }
+
+    .story-meta {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #70695f;
+    }
+
+    .story-cta {
+      margin-top: 0.5rem;
+    }
+
+    /* =========================================
+       SECTION 5: BOTTOM CTA
+    ========================================== */
+    .bottom-cta {
+      background-color: var(--clr-bg-dark);
+      color: var(--clr-white);
+      text-align: center;
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+    }
+
+    .bottom-cta .container {
+      max-width: 720px;
+    }
+
+    .bottom-cta-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .bottom-cta-text {
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .bottom-cta-meta {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1.1rem;
+    }
+
+    .bottom-cta-line {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .bottom-cta-line a {
+      color: var(--clr-accent);
+      text-decoration: none;
+    }
+
+    .bottom-cta-line a:hover {
+      text-decoration: underline;
+    }
+
+    .bottom-cta-btn-row {
+      margin-top: 1.5rem;
+    }
+
+    /* =========================================
+       MODAL FORM POPUP
+    ========================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 2000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 95vh;
+      overflow: auto;
+      border-radius: 22px;
+      background: transparent;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      z-index: 10;
+      border: none;
+      background: var(--clr-bg-dark);
+      color: var(--clr-white);
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content-wrapper {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-aside {
+        margin-top: 1.3rem;
+      }
+
+      .latest-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .story-card {
+        grid-template-columns: 1fr;
+      }
+
+      .story-img {
+        height: 190px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 3rem 1.25rem;
+      }
+
+      .hero-content {
+        padding: 2.6rem 1.8rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding-top: 4.2rem;
+        padding-bottom: 3.2rem;
+      }
+
+      .hero-content {
+        padding: 2.4rem 1.4rem;
+      }
+
+      .topics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR FRAGMENT -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <!-- =========================================
+         HERO
+    ========================================== -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <!-- LEFT -->
+          <div>
+            <div class="hero-kicker">
+              MANLIFTS BLOG · WORK AT HEIGHT ACROSS INDIA
+            </div>
+            <h1 class="hero-title">
+              Practical ideas for safer and smoother access at height.
+            </h1>
+            <p class="hero-text">
+              Browse guides, checklists and project stories that focus on how boom lifts, scissor lifts,
+              man lifts and cherry pickers are used on real jobs across different sectors.
+            </p>
+            <p class="hero-meta">
+              HOW-TO ARTICLES • PROJECT SNAPSHOTS • SHORT CHECKLISTS
+            </p>
+
+            <div class="hero-cta-row">
+              <button class="btn btn-on-dark js-open-form">
+                Click here to get our latest work at height guide
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT ASIDE -->
+          <aside class="hero-aside">
+            <h2 class="hero-aside-title">Use these posts to support your next rental decision.</h2>
+            <p class="hero-aside-text">
+              Each article is built around typical questions we hear from project teams, safety officers
+              and maintenance planners who rent access equipment across India.
+            </p>
+            <div class="hero-aside-list">
+              <span>Understand how to size platforms, heights and outreach for your sites.</span>
+              <span>See how other projects have used boom lifts, scissor lifts and cherry pickers.</span>
+              <span>Pick up simple reminders on planning, coordination and on-site behaviour.</span>
+            </div>
+            <p class="hero-aside-note">
+              Click here to tell us what you want to see more of on this blog.
+            </p>
+            <div>
+              <button class="btn btn-on-dark js-open-form">
+                Click here to send your feedback and suggestions
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 2: LATEST ARTICLES (GRID)
+    ========================================== -->
+    <section class="latest-articles">
+      <div class="container">
+        <header class="section-heading">
+          <p class="section-tag">Latest insights</p>
+          <h2 class="section-title">Fresh posts from the Manlifts team</h2>
+          <p class="section-sub">
+            A mix of short explainers and planning notes you can share with your colleagues before finalising
+            boom lift, scissor lift, man lift or cherry picker rentals.
+          </p>
+        </header>
+
+        <div class="latest-layout">
+          <!-- LEFT: GRID OF FEATURED ARTICLES -->
+          <div class="article-grid">
+            <!-- ARTICLE 1 -->
+            <article class="article-card">
+              <div class="article-img">
+                <!-- replace with your image -->
+                <img
+                  src="images/blog-planning-height.jpg"
+                  alt="Planner reviewing working height for access equipment"
+                >
+              </div>
+              <div class="article-body">
+                <div class="article-tag">Planning basics</div>
+                <h3 class="article-title">How to turn “floor-to-ceiling height” into a working height value.</h3>
+                <p class="article-text">
+                  A quick way to translate floor-to-ceiling numbers into safe working height estimates for
+                  boom lifts and scissor lifts, with a simple buffer added.
+                </p>
+                <div class="article-meta">Short guide · Pre-rental prep</div>
+                <div class="article-cta">
+                  <button class="btn js-open-form">
+                    Click here to get this height planning note by email
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ARTICLE 2 -->
+            <article class="article-card">
+              <div class="article-img">
+                <img
+                  src="images/blog-city-rollout.jpg"
+                  alt="Fleet of access equipment prepared for deployment"
+                >
+              </div>
+              <div class="article-body">
+                <div class="article-tag">Multi-city work</div>
+                <h3 class="article-title">Coordinating access equipment across several city locations.</h3>
+                <p class="article-text">
+                  Thoughts on scheduling, travel lead times and communication when your boom lifts and
+                  scissor lifts need to move between multiple sites.
+                </p>
+                <div class="article-meta">Project planning · Multi-location</div>
+                <div class="article-cta">
+                  <button class="btn js-open-form">
+                    Click here to share your city list and get a deployment outline
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ARTICLE 3 -->
+            <article class="article-card">
+              <div class="article-img">
+                <img
+                  src="images/blog-night-work.jpg"
+                  alt="Access equipment working during night shift"
+                >
+              </div>
+              <div class="article-body">
+                <div class="article-tag">Shift timing</div>
+                <h3 class="article-title">Using access equipment during night shifts and quiet hours.</h3>
+                <p class="article-text">
+                  Points to consider when planning work at height in malls, offices or plants during
+                  non-peak hours or full shutdowns.
+                </p>
+                <div class="article-meta">Operations · Night and weekend work</div>
+                <div class="article-cta">
+                  <button class="btn js-open-form">
+                    Click here to ask for a sample night shift checklist
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- ARTICLE 4 -->
+            <article class="article-card">
+              <div class="article-img">
+                <img
+                  src="images/blog-team-briefing.jpg"
+                  alt="Supervisor briefing a team before working at height"
+                >
+              </div>
+              <div class="article-body">
+                <div class="article-tag">Site briefings</div>
+                <h3 class="article-title">What to include in a 10-minute briefing before you start work at height.</h3>
+                <p class="article-text">
+                  A simple structure for short toolbox talks that keep operators, supervisors and other
+                  trades aligned when boom lifts and scissor lifts arrive on site.
+                </p>
+                <div class="article-meta">Communication · On-site practice</div>
+                <div class="article-cta">
+                  <button class="btn js-open-form">
+                    Click here to request a briefing template
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- RIGHT: NOTES / QUICK TIPS PANEL -->
+          <aside class="notes-panel">
+            <h3 class="notes-title">Quick notes to support your decisions.</h3>
+            <p class="notes-text">
+              Not every question needs a full article. These short notes cover topics that come up
+              frequently when teams plan access equipment.
+            </p>
+
+            <div class="notes-list">
+              <div>
+                <span class="notes-item-label">Working around other trades</span>
+                When access equipment shares space with other teams, even small route changes can
+                keep everyone productive rather than blocked.
+              </div>
+              <div>
+                <span class="notes-item-label">Handling last-minute height changes</span>
+                How to respond when ceiling heights or scope change after you’ve already booked
+                scissor lifts or boom lifts.
+              </div>
+              <div>
+                <span class="notes-item-label">Using photos and sketches in your enquiry</span>
+                A few clear images of your site often explain more than long text descriptions
+                when you request a rental quote.
+              </div>
+            </div>
+
+            <p class="notes-footer">
+              Click here to send a photo or short sketch of your site when you ask for an article summary.
+            </p>
+
+            <button class="btn js-open-form">
+              Click here to ask for a recap of any blog topic
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 3: TOPIC CATEGORIES
+    ========================================== -->
+    <section class="topics">
+      <div class="topics-inner">
+        <header class="section-heading">
+          <p class="section-tag">Browse by theme</p>
+          <h2 class="section-title">Find posts that match your role</h2>
+          <p class="section-sub">
+            Use these themes as an informal way to pick articles that match what you focus on day to day.
+            You can always mix topics if your role overlaps several areas.
+          </p>
+        </header>
+
+        <div class="topics-grid">
+          <!-- TOPIC 1 -->
+          <article class="topic-card">
+            <div class="topic-head">
+              <div class="topic-icon">P</div>
+              <div class="topic-title">Project planners</div>
+            </div>
+            <p class="topic-text">
+              Articles that help with timelines, sequencing, mobilisation and demobilisation of access
+              equipment on construction and fit-out projects.
+            </p>
+            <button class="btn js-open-form">
+              Click here to request links for planning-focused posts
+            </button>
+          </article>
+
+          <!-- TOPIC 2 -->
+          <article class="topic-card">
+            <div class="topic-head">
+              <div class="topic-icon">S</div>
+              <div class="topic-title">Safety & site teams</div>
+            </div>
+            <p class="topic-text">
+              Short checklists, briefing ideas and reminders that support safe behaviour around boom lifts,
+              scissor lifts and cherry pickers.
+            </p>
+            <button class="btn js-open-form">
+              Click here to receive a list of safety-related articles
+            </button>
+          </article>
+
+          <!-- TOPIC 3 -->
+          <article class="topic-card">
+            <div class="topic-head">
+              <div class="topic-icon">M</div>
+              <div class="topic-title">Maintenance planners</div>
+            </div>
+            <p class="topic-text">
+              Notes on plant shutdowns, repeat maintenance tasks and selecting access solutions around
+              machinery, platforms and pipe racks.
+            </p>
+            <button class="btn js-open-form">
+              Click here to ask for content around industrial maintenance work
+            </button>
+          </article>
+
+          <!-- TOPIC 4 -->
+          <article class="topic-card">
+            <div class="topic-head">
+              <div class="topic-icon">O</div>
+              <div class="topic-title">Owners & facility heads</div>
+            </div>
+            <p class="topic-text">
+              Posts that help owners and facility managers understand how access rentals can support
+              upgrades, inspections and long-term upkeep.
+            </p>
+            <button class="btn js-open-form">
+              Click here to get a bundle of articles for facility teams
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 4: PROJECT STORIES
+    ========================================== -->
+    <section class="stories">
+      <div class="stories-inner">
+        <header class="section-heading">
+          <p class="section-tag">Project stories</p>
+          <h2 class="section-title">Examples of how access equipment fits real jobs</h2>
+          <p class="section-sub">
+            These short stories are based on typical deployment scenarios. Replace the images with
+            your own project photos when you’re ready.
+          </p>
+        </header>
+
+        <div class="stories-list">
+          <!-- STORY 1 -->
+          <article class="story-card">
+            <div class="story-img">
+              <img
+                src="images/story-mall-fitout.jpg"
+                alt="Boom lifts and scissor lifts used during mall fit-out"
+              >
+            </div>
+            <div class="story-body">
+              <div class="story-tag">Commercial fit-out</div>
+              <h3 class="story-title">
+                Coordinating multiple scissor lifts during a mall interior build.
+              </h3>
+              <p class="story-text">
+                A large mall fit-out required several scissor lifts to move between zones while
+                electricians, HVAC teams and ceiling installers worked on parallel fronts. The plan
+                focused on clear routes, shared height schedules and quick handovers between trades.
+              </p>
+              <p class="story-meta">Multi-trade work · Live schedule coordination</p>
+              <div class="story-cta">
+                <button class="btn js-open-form">
+                  Click here to share your mall fit-out plan and get suggestions
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 2 -->
+          <article class="story-card">
+            <div class="story-img">
+              <img
+                src="images/story-plant-shutdown.jpg"
+                alt="Access equipment used in an industrial plant shutdown"
+              >
+            </div>
+            <div class="story-body">
+              <div class="story-tag">Industrial maintenance</div>
+              <h3 class="story-title">
+                Using boom lifts and man lifts during a short plant shutdown window.
+              </h3>
+              <p class="story-text">
+                During a planned shutdown, access equipment was positioned in advance at critical
+                locations so technicians could move quickly between elevated platforms, inspection
+                points and repair areas without waiting for new setups.
+              </p>
+              <p class="story-meta">Shutdown window · Pre-positioned equipment</p>
+              <div class="story-cta">
+                <button class="btn js-open-form">
+                  Click here to outline your shutdown and ask for access suggestions
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- STORY 3 -->
+          <article class="story-card">
+            <div class="story-img">
+              <img
+                src="images/story-city-signage.jpg"
+                alt="Cherry picker working on city signage"
+              >
+            </div>
+            <div class="story-body">
+              <div class="story-tag">City & infrastructure</div>
+              <h3 class="story-title">
+                Cherry pickers for quick signage and lighting work on busy roads.
+              </h3>
+              <p class="story-text">
+                A city maintenance team used truck-mounted platforms to complete signage repairs,
+                traffic signal work and high mast lighting tasks in short, traffic-managed windows.
+                Planning centred around time slots and clear approach routes.
+              </p>
+              <p class="story-meta">Traffic coordination · Short-duration tasks</p>
+              <div class="story-cta">
+                <button class="btn js-open-form">
+                  Click here to send your city maintenance scope for review
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECTION 5: BOTTOM CTA
+    ========================================== -->
+    <section class="bottom-cta">
+      <div class="container">
+        <h2 class="bottom-cta-title">
+          Want to connect blog ideas to your next rental?
+        </h2>
+        <p class="bottom-cta-text">
+          If any of these posts match what you are planning on site, share a short note about your
+          project, locations and expected dates. We can help you turn the ideas into a practical
+          access plan using boom lifts, scissor lifts, man lifts or cherry pickers.
+        </p>
+
+        <p class="bottom-cta-meta">
+          PAN-INDIA SUPPORT · PRACTICAL ACCESS COMBINATIONS · PROJECT-FOCUSED
+        </p>
+
+        <p class="bottom-cta-line">
+          CALL: <a href="tel:+919999999999">+91 99999 99999</a>
+        </p>
+        <p class="bottom-cta-line">
+          EMAIL: <a href="mailto:info@manlifts.com">info@manlifts.com</a>
+        </p>
+
+        <div class="bottom-cta-btn-row">
+          <button class="btn btn-on-dark js-open-form">
+            Click here to send your project details using our enquiry form
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER FRAGMENT -->
+  <div id="footer-placeholder"></div>
+
+  <!-- POPUP FORM (form.html) -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="formModalClose" aria-label="Close form">&times;</button>
+      <div class="modal-content-wrapper" id="formModalContent">
+        <!-- form.html will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       SCRIPTS
+  ========================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Load navbar
+      fetch("navbar.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading navbar.html", err);
+        });
+
+      // Load footer
+      fetch("footer.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading footer.html", err);
+        });
+
+      // Setup popup for form.html
+      setupFormPopup();
+    });
+
+    function setupFormPopup() {
+      var modal = document.getElementById("formModal");
+      var modalClose = document.getElementById("formModalClose");
+      var modalContent = document.getElementById("formModalContent");
+      var formLoaded = false;
+
+      document.addEventListener("click", function (event) {
+        var target = event.target;
+        if (target.classList.contains("js-open-form")) {
+          event.preventDefault();
+          openModal();
+        }
+      });
+
+      function openModal() {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        if (!formLoaded) {
+          fetch("form.html")
+            .then(function (res) { return res.text(); })
+            .then(function (html) {
+              modalContent.innerHTML = html;
+              formLoaded = true;
+            })
+            .catch(function () {
+              modalContent.innerHTML =
+                "<div style='background:#ffffff;padding:2rem;border-radius:1rem;color:#1B211A;'>Unable to load the enquiry form right now.</div>";
+            });
+        }
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      modalClose.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+    }
+  </script>
+</body>
+</html>

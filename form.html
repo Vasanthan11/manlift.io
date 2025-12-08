@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enquiry Form - Manlifts Access Rentals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --clr-bg-dark: #1B211A;
+      --clr-primary: #628141;
+      --clr-primary-light: #8BAE66;
+      --clr-accent: #EBD5AB;
+      --clr-white: #ffffff;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--clr-accent);
+      color: var(--clr-bg-dark);
+      line-height: 1.5;
+    }
+
+    .form-section-wrapper {
+      /* min-height: 100vh; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.25rem;
+      /* background: radial-gradient(circle at top left, var(--clr-primary-light), var(--clr-bg-dark)); */
+    }
+
+    .form-section {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      background-color: var(--clr-white);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+    }
+
+    /* LEFT COLUMN (INFO) */
+    .form-info {
+      background: linear-gradient(160deg, var(--clr-bg-dark), var(--clr-primary));
+      color: var(--clr-white);
+      padding: 2.5rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .form-info-top-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .form-info-title {
+      font-size: 1.85rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-info-text {
+      font-size: 0.95rem;
+      max-width: 26rem;
+      opacity: 0.95;
+    }
+
+    .form-info-text span {
+      font-weight: 600;
+    }
+
+    .form-info-badges {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .form-info-badge {
+      border-radius: 999px;
+      padding: 0.3rem 0.75rem;
+      background: rgba(235, 213, 171, 0.16);
+      border: 1px solid rgba(235, 213, 171, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+    }
+
+    .form-contact-blocks {
+      display: grid;
+      gap: 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .form-contact-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 0.18rem;
+    }
+
+    .form-contact-value a,
+    .form-contact-value {
+      color: var(--clr-white);
+      text-decoration: none;
+      font-size: 0.96rem;
+      word-break: break-word;
+    }
+
+    .form-contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    /* RIGHT COLUMN (FORM) */
+    .form-pane {
+      padding: 2.5rem 2.25rem;
+      background-color: var(--clr-white);
+    }
+
+    .form-heading-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .form-heading-main {
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      margin-bottom: 0.55rem;
+      color: var(--clr-bg-dark);
+    }
+
+    .form-heading-sub {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
+    .form-note-line {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-primary-light);
+      margin-bottom: 1.3rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .form-field.wide {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    label span {
+      color: var(--clr-primary);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      border-radius: 10px;
+      border: 1px solid #d5d0c7;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      outline: none;
+      background-color: var(--clr-white);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      font-family: "Poppins", sans-serif;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--clr-primary);
+      box-shadow: 0 0 0 2px rgba(98, 129, 65, 0.16);
+      background-color: #fbfaf7;
+    }
+
+    select {
+      background-image: linear-gradient(45deg, transparent 50%, var(--clr-primary) 50%),
+                        linear-gradient(135deg, var(--clr-primary) 50%, transparent 50%);
+      background-position: calc(100% - 16px) calc(50% - 2px),
+                           calc(100% - 12px) calc(50% - 2px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 2rem;
+      appearance: none;
+    }
+
+    .form-hint {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 1.1rem;
+    }
+
+    .form-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .form-privacy {
+      font-size: 0.78rem;
+      color: #555;
+      max-width: 260px;
+    }
+
+    /* BUTTON – light default, coloured hover */
+    .form-submit-btn {
+      border: 1px solid var(--clr-primary);
+      outline: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 0.7rem 1.9rem;
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .form-submit-btn:hover {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      box-shadow: 0 10px 20px rgba(27, 33, 26, 0.25);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .form-section {
+        grid-template-columns: 1fr;
+      }
+
+      .form-info {
+        display: none; /* show only the form on small screens */
+      }
+
+      .form-pane {
+        padding: 2.2rem 1.4rem 2.4rem;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-footer-row {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .form-section-wrapper {
+        padding: 2rem 0.75rem;
+      }
+
+      .form-heading-main {
+        font-size: 1.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="form-section-wrapper">
+  <div class="form-section">
+
+    <!-- LEFT COLUMN: TEXT + CONTACT (hidden on small screens) -->
+    <div class="form-info">
+      <div>
+        <div class="form-info-top-label">Project enquiry</div>
+        <h2 class="form-info-title">
+          Share your manlift, boom lift or scissor lift requirement.
+        </h2>
+        <p class="form-info-text">
+          Tell us what kind of <span>access equipment</span> you need, the
+          approximate height and rental duration, and our team will get back
+          to you with a clear, tailored quote for your site.
+        </p>
+
+        <div class="form-info-badges">
+          <span class="form-info-badge">Quick quote turnaround</span>
+          <span class="form-info-badge">Site-ready machines</span>
+          <span class="form-info-badge">Operator support on request</span>
+        </div>
+      </div>
+
+      <div class="form-contact-blocks">
+        <div>
+          <div class="form-contact-label">Call us</div>
+          <div class="form-contact-value">
+            <a href="tel:+919999999999">+91 99999 99999</a>
+          </div>
+        </div>
+        <div>
+          <div class="form-contact-label">Email</div>
+          <div class="form-contact-value">
+            <a href="mailto:info@manlifts.com">info@manlifts.com</a>
+          </div>
+        </div>
+        <div>
+          <div class="form-contact-label">Business hours</div>
+          <div class="form-contact-value">
+            Monday to Saturday, 9:00 AM – 7:00 PM
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: FORM -->
+    <div class="form-pane">
+      <div class="form-heading-tag">Online rental enquiry form</div>
+      <h2 class="form-heading-main">Tell us about your access need</h2>
+      <p class="form-heading-sub">
+        Fill in the details below and we’ll respond with availability, pricing
+        and the right manlift, boom lift or scissor lift option for your project.
+      </p>
+
+      <div class="form-note-line">
+        Accurate details help us share an exact quote faster
+      </div>
+
+      <form action="submit-form.php" method="POST" novalidate>
+        <div class="form-grid">
+          <!-- FULL NAME -->
+          <div class="form-field">
+            <label for="fullName">Full Name<span>*</span></label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="form-field">
+            <label for="email">Email Address<span>*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <!-- CONTACT NUMBER -->
+          <div class="form-field">
+            <label for="phone">Contact Number<span>*</span></label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <!-- AREA / LOCATION -->
+          <div class="form-field">
+            <label for="location">Site Location / Area<span>*</span></label>
+            <input type="text" id="location" name="location" required>
+          </div>
+
+          <!-- EQUIPMENT SELECT -->
+          <div class="form-field wide">
+            <label for="equipment">Equipment Type Required<span>*</span></label>
+            <select id="equipment" name="equipment" required>
+              <option value="">Select equipment</option>
+              <option value="Boom Lift">Boom Lift</option>
+              <option value="Scissor Lift">Scissor Lift</option>
+              <option value="Manlift">Manlift</option>
+              <option value="Others">Others / Not sure</option>
+            </select>
+          </div>
+
+          <!-- REQUEST / DETAILS -->
+          <div class="form-field wide">
+            <label for="message">Project Details / Height & Duration</label>
+            <textarea id="message" name="message" placeholder="Mention working height, rental period, indoor/outdoor use, and any special access conditions."></textarea>
+          </div>
+        </div>
+
+        <p class="form-hint">
+          Example: “Need 12–14m boom lift for 15 days at an industrial site, outdoor use, limited parking space.”
+        </p>
+
+        <div class="form-footer-row">
+          <p class="form-privacy">
+            By sending this form, you allow Manlifts to contact you with quotes,
+            availability and follow-up regarding this enquiry.
+          </p>
+          <button type="submit" class="form-submit-btn">
+            Submit enquiry
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

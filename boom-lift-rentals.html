@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================
+       META + TITLE
+  ========================================== -->
+  <meta charset="UTF-8">
+  <title>Boom Lift Rentals | Articulated & Telescopic Boom Lifts Across India</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- =========================================
+       GOOGLE FONT: POPPINS
+  ========================================== -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- =========================================
+       GLOBAL + PAGE STYLES
+  ========================================== -->
+  <style>
+    :root {
+      --clr-bg-dark: #1B211A;
+      --clr-primary: #628141;
+      --clr-primary-light: #8BAE66;
+      --clr-accent: #EBD5AB;
+      --clr-white: #ffffff;
+    }
+
+    /* ------------------------------
+       GLOBAL RESET + TYPOGRAPHY
+    ------------------------------ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--clr-accent);
+      color: var(--clr-bg-dark);
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+
+    main {
+      margin-top: 80px; /* space for sticky navbar fragment */
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ------------------------------
+       SHARED BUTTON STYLE
+    ------------------------------ */
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--clr-primary);
+      outline: none;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+      /* allow multi-line button text so it stays inside cards */
+      white-space: normal;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .btn:hover {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      box-shadow: 0 10px 20px rgba(27, 33, 26, 0.25);
+    }
+
+    .btn-on-dark {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      border-color: transparent;
+    }
+
+    .btn-on-dark:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      border-color: var(--clr-primary);
+      box-shadow: none;
+    }
+
+    .btn-ghost {
+      border-color: transparent;
+      background: transparent;
+      color: var(--clr-white);
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+    }
+
+    /* =========================================
+       SECTION 1: HERO
+       - CARD WITH LIGHT BACKGROUND IMAGE
+    ========================================== */
+    .hero {
+      background-color: var(--clr-bg-dark);
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-card {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+      background-image: url("images/boom-hero.jpg"); /* replace with your boom lift hero image */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(139, 174, 102, 0.9), rgba(27, 33, 26, 0.96));
+      opacity: 0.96; /* allow image to show softly underneath */
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+      color: var(--clr-white);
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+      color: var(--clr-accent);
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-text {
+      font-size: 0.96rem;
+      max-width: 34rem;
+      margin-bottom: 1.4rem;
+      opacity: 0.96;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .hero-aside {
+      background-color: rgba(27, 33, 26, 0.96);
+      border-radius: 20px;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid rgba(235, 213, 171, 0.5);
+    }
+
+    .hero-aside-title {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-aside-text {
+      font-size: 0.86rem;
+      margin-bottom: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-aside-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .hero-aside-chip {
+      border-radius: 14px;
+      padding: 0.7rem 0.8rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(235, 213, 171, 0.35);
+      font-size: 0.8rem;
+    }
+
+    .hero-aside-chip span {
+      display: block;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--clr-accent);
+      margin-bottom: 0.15rem;
+    }
+
+    /* =========================================
+       SECTION 2: WHERE BOOM LIFTS HELP
+       (TEXT + IMAGE PANEL)
+    ========================================== */
+    .use-cases {
+      background-color: var(--clr-accent);
+    }
+
+    .section-heading {
+      margin-bottom: 2rem;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      color: var(--clr-bg-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: #453f3a;
+      max-width: 36rem;
+    }
+
+    .use-cases-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.2rem;
+      align-items: flex-start;
+      margin-top: 1.4rem;
+    }
+
+    .use-text-blocks {
+      display: grid;
+      gap: 1.1rem;
+      font-size: 0.9rem;
+      color: #38352f;
+    }
+
+    .use-text-blocks h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      color: var(--clr-bg-dark);
+    }
+
+    .use-text-blocks p {
+      line-height: 1.6;
+    }
+
+    .use-list {
+      margin-top: 0.5rem;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+    }
+
+    .use-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .use-image-panel {
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: var(--clr-bg-dark);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .use-image {
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .use-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .use-caption {
+      padding: 1.1rem 1rem 1.3rem;
+      color: var(--clr-white);
+      font-size: 0.88rem;
+    }
+
+    .use-caption-title {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .use-caption-text {
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 0.8rem;
+    }
+
+    /* =========================================
+       SECTION 3: BOOM LIFT TYPES GRID
+       (WITH SMALL IMAGES)
+    ========================================== */
+    .types {
+      background-color: var(--clr-white);
+    }
+
+    .types-heading {
+      text-align: center;
+      margin-bottom: 2.3rem;
+    }
+
+    .types-heading .section-title {
+      margin-bottom: 0.5rem;
+    }
+
+    .types-heading .section-sub {
+      margin: 0.4rem auto 0;
+      max-width: 34rem;
+    }
+
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .type-card {
+      border-radius: 18px;
+      border: 1px solid rgba(27, 33, 26, 0.12);
+      overflow: hidden;
+      background-color: var(--clr-accent);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .type-img {
+      height: 150px;
+      overflow: hidden;
+    }
+
+    .type-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .type-body {
+      padding: 1.1rem 1rem 1.2rem;
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      color: #3a372f;
+    }
+
+    .type-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+    }
+
+    .type-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+
+    .type-text {
+      font-size: 0.86rem;
+    }
+
+    .type-meta {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #5b574d;
+      margin-top: 0.2rem;
+    }
+
+    .type-cta {
+      margin-top: 0.6rem;
+    }
+
+    /* =========================================
+       SECTION 4: RENTAL PLANNING STEPS
+    ========================================== */
+    .steps {
+      background-color: var(--clr-accent);
+    }
+
+    .steps-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.2rem;
+      align-items: flex-start;
+    }
+
+    .steps-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .step-card {
+      border-radius: 16px;
+      background-color: var(--clr-white);
+      border: 1px solid rgba(27, 33, 26, 0.12);
+      padding: 1rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .step-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .step-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-text {
+      font-size: 0.88rem;
+      color: #444039;
+    }
+
+    .steps-side {
+      background-color: var(--clr-bg-dark);
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid rgba(235, 213, 171, 0.5);
+      color: var(--clr-white);
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .steps-side-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .steps-side-text {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .steps-side-list {
+      font-size: 0.86rem;
+      display: grid;
+      gap: 0.35rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* =========================================
+       SECTION 5: DARK CTA STRIP
+    ========================================== */
+    .bottom-cta {
+      background-color: var(--clr-bg-dark);
+      color: var(--clr-white);
+      text-align: center;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .bottom-cta .container {
+      max-width: 720px;
+    }
+
+    .bottom-cta-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .bottom-cta-text {
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .bottom-cta-meta {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1.1rem;
+    }
+
+    .bottom-cta-line {
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .bottom-cta-line a {
+      color: var(--clr-accent);
+      text-decoration: none;
+    }
+
+    .bottom-cta-line a:hover {
+      text-decoration: underline;
+    }
+
+    .bottom-cta-btn-row {
+      margin-top: 1.5rem;
+    }
+
+    /* =========================================
+       MODAL FORM POPUP
+    ========================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 2000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-inner {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      max-height: 95vh;
+      overflow: auto;
+      border-radius: 22px;
+      background: transparent;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+      z-index: 10;
+      border: none;
+      background: var(--clr-bg-dark);
+      color: var(--clr-white);
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content-wrapper {
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    /* =========================================
+       RESPONSIVE QUERIES
+    ========================================== */
+    @media (max-width: 992px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-aside {
+        margin-top: 1.5rem;
+      }
+
+      .use-cases-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .types-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      section {
+        padding: 3rem 1.25rem;
+      }
+
+      .hero-inner {
+        padding: 2.7rem 1.8rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-aside-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .types-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding-top: 4.2rem;
+        padding-bottom: 3.4rem;
+      }
+
+      .hero-inner {
+        padding: 2.4rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =========================================
+       NAVBAR PLACEHOLDER
+  ========================================== -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- =========================================
+       MAIN CONTENT
+  ========================================== -->
+  <main>
+
+    <!-- ============ SECTION 1: HERO ============ -->
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-inner">
+          <!-- LEFT -->
+          <div>
+            <div class="hero-kicker">
+              BOOM LIFT RENTALS • ARTICULATED & TELESCOPIC
+            </div>
+            <h1 class="hero-title">
+              Boom lifts for safe access to demanding heights.
+            </h1>
+            <p class="hero-text">
+              Rent articulated and telescopic boom lifts for construction sites, industrial plants,
+              infrastructure projects and facility maintenance across India. We help you choose the
+              right height and reach so your team can focus on getting the job done.
+            </p>
+
+            <div class="hero-cta-row">
+              <button class="btn btn-on-dark js-open-form">
+                Click here to get a boom lift quote
+              </button>
+              <button class="btn btn-ghost js-open-form">
+                Click here to share boom lift requirements
+              </button>
+            </div>
+
+            <p class="hero-meta">
+              Project-based rentals · Pan-India coordination · Support-focused operations
+            </p>
+          </div>
+
+          <!-- RIGHT -->
+          <aside class="hero-aside">
+            <h2 class="hero-aside-title">Plan the right boom lift for your project.</h2>
+            <p class="hero-aside-text">
+              Share basics like working height, outreach, indoor or outdoor use and expected rental
+              duration. We’ll suggest boom lift options that match your site conditions.
+            </p>
+
+            <div class="hero-aside-grid">
+              <div class="hero-aside-chip">
+                <span>Typical heights</span>
+                10–12 m for light maintenance, 14–20 m for most construction and plant work.
+              </div>
+              <div class="hero-aside-chip">
+                <span>Key advantages</span>
+                Controlled outreach, stable platform and quick repositioning between work points.
+              </div>
+              <div class="hero-aside-chip">
+                <span>Indoor / outdoor</span>
+                Electric booms for clean environments, engine-driven booms for rough terrain.
+              </div>
+              <div class="hero-aside-chip">
+                <span>Operator options</span>
+                Click here to request machines with experienced operators where required.
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 2: WHERE BOOM LIFTS HELP ============ -->
+    <section class="use-cases">
+      <div class="container">
+        <header class="section-heading">
+          <p class="section-tag">Where boom lifts are used</p>
+          <h2 class="section-title">Typical boom lift applications on site</h2>
+          <p class="section-sub">
+            Boom lifts are chosen wherever teams need repeat access to elevated positions with a mix
+            of vertical and horizontal movement, without building scaffold each time.
+          </p>
+        </header>
+
+        <div class="use-cases-inner">
+          <!-- LEFT TEXT -->
+          <div class="use-text-blocks">
+            <div>
+              <h3>Construction & finishing works</h3>
+              <p>
+                Use boom lifts to reach façade panels, steel connections, roof edges and hard-to-reach
+                junctions during construction and finishing stages. The platform lets workers carry tools
+                and hardware while staying in a controlled working position.
+              </p>
+              <ul class="use-list">
+                <li>Façade cladding and glazing installation</li>
+                <li>Roof perimeter and soffit work</li>
+                <li>Bridges, flyovers and elevated structures</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Industrial & plant maintenance</h3>
+              <p>
+                In industrial facilities and warehouses, boom lifts give access to equipment, pipe racks,
+                conveyors and structural members. This reduces time spent erecting temporary platforms
+                for short-duration jobs.
+              </p>
+              <ul class="use-list">
+                <li>Shutdown and turnaround activities</li>
+                <li>Inspection of high-level equipment</li>
+                <li>Cleaning and corrosion repairs</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Lighting, utilities & signage</h3>
+              <p>
+                Outdoor boom lifts support teams working on street lighting, high-mounted signage and
+                communication equipment, allowing quick repositioning along roads and corridors.
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT IMAGE PANEL -->
+          <aside class="use-image-panel">
+            <div class="use-image">
+              <!-- replace with your real project image -->
+              <img src="images/boom-yard.jpg" alt="Boom lifts prepared in a rental yard">
+            </div>
+            <div class="use-caption">
+              <p class="use-caption-title">Boom lifts ready for deployment.</p>
+              <p class="use-caption-text">
+                Fleet combinations typically include articulated and telescopic units in different
+                heights, so you can match one or more machines to each work area.
+              </p>
+              <button class="btn js-open-form">
+                Click here to discuss your boom lift application
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3: BOOM LIFT TYPES GRID ============ -->
+    <section class="types">
+      <div class="container">
+        <header class="types-heading">
+          <p class="section-tag">Boom lift options</p>
+          <h2 class="section-title">Choose the boom configuration that suits your site</h2>
+          <p class="section-sub">
+            Different boom lift designs solve different access challenges. You can rent one type for
+            a focused task or combine multiple models on complex projects.
+          </p>
+        </header>
+
+        <div class="types-grid">
+          <!-- TYPE 1 -->
+          <article class="type-card">
+            <div class="type-img">
+              <!-- replace with real articulated boom image -->
+              <img src="images/boom-indoor.jpg" alt="Articulated boom lift working indoors">
+            </div>
+            <div class="type-body">
+              <p class="type-tag">Articulated booms</p>
+              <h3 class="type-title">Reach up and over obstacles</h3>
+              <p class="type-text">
+                Articulated boom lifts have multiple joints that allow the platform to rise, bend and
+                reach over obstacles such as canopies, pipe racks or building projections.
+              </p>
+              <p class="type-meta">Ideal for: congested sites & complex geometry</p>
+              <div class="type-cta">
+                <button class="btn js-open-form">
+                  Click here to enquire for articulated boom lifts
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- TYPE 2 -->
+          <article class="type-card">
+            <div class="type-img">
+              <!-- replace with real telescopic boom image -->
+              <img src="images/boom-outdoor.jpg" alt="Telescopic boom lift on an outdoor project">
+            </div>
+            <div class="type-body">
+              <p class="type-tag">Telescopic booms</p>
+              <h3 class="type-title">Long, straight horizontal outreach</h3>
+              <p class="type-text">
+                Telescopic booms extend in a straight line, providing maximum outreach where you have
+                open ground or clear approach paths and need to work further away from the base.
+              </p>
+              <p class="type-meta">Ideal for: open sites & long spans</p>
+              <div class="type-cta">
+                <button class="btn js-open-form">
+                  Click here to enquire for telescopic boom lifts
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- TYPE 3 -->
+          <article class="type-card">
+            <div class="type-img">
+              <!-- replace with real electric boom image -->
+              <img src="images/boom-electric.jpg" alt="Electric boom lift in a clean indoor space">
+            </div>
+            <div class="type-body">
+              <p class="type-tag">Electric & hybrid booms</p>
+              <h3 class="type-title">Low-noise access for clean environments</h3>
+              <p class="type-text">
+                Electric and hybrid boom lifts help you work inside factories, warehouses and finished
+                commercial spaces with reduced emissions and quieter operation.
+              </p>
+              <p class="type-meta">Ideal for: indoor & low-emission zones</p>
+              <div class="type-cta">
+                <button class="btn js-open-form">
+                  Click here to enquire for electric boom lifts
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 4: RENTAL PLANNING STEPS ============ -->
+    <section class="steps">
+      <div class="steps-inner">
+        <!-- LEFT: STEPS -->
+        <div>
+          <header class="section-heading">
+            <p class="section-tag">How to plan your rental</p>
+            <h2 class="section-title">Simple steps to organise boom lifts for your project</h2>
+          </header>
+
+          <div class="steps-list">
+            <article class="step-card">
+              <p class="step-label">Step 01</p>
+              <h3 class="step-title">Click here to send a brief description of your job</h3>
+              <p class="step-text">
+                Share the city or site location, type of work, approximate working height, whether the
+                work is indoors or outdoors and your expected rental period.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <p class="step-label">Step 02</p>
+              <h3 class="step-title">Click here to review boom lift options and pricing</h3>
+              <p class="step-text">
+                We revert with suggested boom lift models, tentative availability and rental pricing,
+                so you can compare options and align with your project schedule.
+              </p>
+            </article>
+
+            <article class="step-card">
+              <p class="step-label">Step 03</p>
+              <h3 class="step-title">Click here to confirm schedule and deployment details</h3>
+              <p class="step-text">
+                Once you confirm, we block the units, coordinate transport, and share basic handover
+                details so your team knows when to expect the machine on site.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- RIGHT: SIDE INFO -->
+        <aside class="steps-side">
+          <h3 class="steps-side-title">
+            Need help choosing between different boom lift sizes?
+          </h3>
+          <p class="steps-side-text">
+            If you’re unsure about the exact height or outreach required, a simple sketch or a few
+            photos of the work area can help us guide you more accurately.
+          </p>
+          <div class="steps-side-list">
+            <span>Click here to attach or describe your site constraints in the enquiry.</span>
+            <span>We highlight whether articulated or telescopic booms are better suited.</span>
+            <span>You receive practical suggestions instead of generic equipment lists.</span>
+          </div>
+          <button class="btn btn-on-dark js-open-form" style="margin-top:0.8rem;">
+            Click here to ask which boom lift size to choose
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5: BOTTOM CTA STRIP ============ -->
+    <section class="bottom-cta">
+      <div class="container">
+        <h2 class="bottom-cta-title">
+          Ready to line up boom lifts for your next project?
+        </h2>
+        <p class="bottom-cta-text">
+          Click here to share your upcoming work at height and we’ll help you plan the boom lift
+          combination, tentative dates and supporting details you need.
+        </p>
+
+        <p class="bottom-cta-meta">
+          Height access planning · Multiple cities · One point of contact
+        </p>
+
+        <p class="bottom-cta-line">
+          CALL: <a href="tel:+919999999999">+91 99999 99999</a>
+        </p>
+        <p class="bottom-cta-line">
+          EMAIL: <a href="mailto:info@manlifts.com">info@manlifts.com</a>
+        </p>
+
+        <div class="bottom-cta-btn-row">
+          <button class="btn btn-on-dark js-open-form">
+            Click here to send a boom lift rental enquiry
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       FOOTER PLACEHOLDER
+  ========================================== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- =========================================
+       POPUP FORM MODAL
+       (form.html injected here)
+  ========================================== -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal-inner">
+      <button class="modal-close" id="formModalClose" aria-label="Close form">&times;</button>
+      <div class="modal-content-wrapper" id="formModalContent">
+        <!-- form.html content will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       SCRIPTS
+  ========================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Load navbar.html
+      fetch("navbar.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("navbar-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading navbar.html", err);
+        });
+
+      // Load footer.html
+      fetch("footer.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(function (err) {
+          console.error("Error loading footer.html", err);
+        });
+
+      // Set up popup
+      setupFormPopup();
+    });
+
+    function setupFormPopup() {
+      var modal = document.getElementById("formModal");
+      var modalClose = document.getElementById("formModalClose");
+      var modalContent = document.getElementById("formModalContent");
+      var formLoaded = false;
+
+      document.addEventListener("click", function (event) {
+        var target = event.target;
+        if (target.classList.contains("js-open-form")) {
+          event.preventDefault();
+          openModal();
+        }
+      });
+
+      function openModal() {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        if (!formLoaded) {
+          fetch("form.html")
+            .then(function (res) { return res.text(); })
+            .then(function (html) {
+              modalContent.innerHTML = html;
+              formLoaded = true;
+            })
+            .catch(function () {
+              modalContent.innerHTML =
+                "<div style='background:#ffffff;padding:2rem;border-radius:1rem;color:#1B211A;'>Unable to load the enquiry form right now.</div>";
+            });
+        }
+      }
+
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      modalClose.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
