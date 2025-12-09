@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You - Manlifts Access Rentals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --clr-bg-dark: #1B211A;
+      --clr-primary: #628141;
+      --clr-primary-light: #8BAE66;
+      --clr-accent: #EBD5AB;
+      --clr-white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--clr-accent);
+      color: var(--clr-bg-dark);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .thankyou-card {
+      background-color: var(--clr-white);
+      border-radius: 22px;
+      max-width: 620px;
+      width: 100%;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+      text-align: center;
+    }
+
+    .thankyou-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clr-primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .thankyou-title {
+      font-size: 1.85rem;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    .thankyou-text {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1.4rem;
+    }
+
+    .thankyou-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .thankyou-btn {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 0.75rem 1.9rem;
+      border: 1px solid var(--clr-primary);
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .thankyou-btn:hover {
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      box-shadow: 0 10px 20px rgba(27, 33, 26, 0.25);
+    }
+
+    @media (max-width: 480px) {
+      .thankyou-card {
+        padding: 2rem 1.3rem;
+      }
+
+      .thankyou-title {
+        font-size: 1.55rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thankyou-card">
+    <div class="thankyou-tag">Enquiry submitted</div>
+    <h1 class="thankyou-title">Thank you for reaching out</h1>
+    <p class="thankyou-text">
+      We’ve received your rental enquiry for manlifts, boom lifts or scissor lifts.
+      Our team will review your details and get back to you with availability and pricing shortly.
+    </p>
+    <p class="thankyou-note">
+      For urgent requirements, you can also call us on <strong>+91 72000 30469</strong> during business hours.
+    </p>
+    <!-- Update href to your home / main page -->
+    <a href="/" class="thankyou-btn">Back to Homepage</a>
+  </div>
+
+</body>
+</html>
