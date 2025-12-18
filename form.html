@@ -307,6 +307,24 @@
         font-size: 1.45rem;
       }
     }
+    .form-location-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.form-location-chip {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(235, 213, 171, 0.18);
+  border: 1px solid rgba(235, 213, 171, 0.45);
+  color: var(--clr-white);
+  white-space: nowrap;
+}
+
   </style>
 </head>
 
@@ -349,18 +367,20 @@
           </div>
         </div>
         <div>
-          <div class="form-contact-label">Our Locations</div>
-          <div class="form-contact-value">
-            Chennai,
-Coimbatore,
-Kochi,
-Bengaluru,
-Hyderabad,
-Pune,
-Mumbai,
-Delhi
-          </div>
-        </div>
+         <div>
+  <div class="form-contact-label">Our Locations</div>
+  <div class="form-location-chips">
+    <span class="form-location-chip">Chennai</span>
+    <span class="form-location-chip">Coimbatore</span>
+    <span class="form-location-chip">Kochi</span>
+    <span class="form-location-chip">Bengaluru</span>
+    <span class="form-location-chip">Hyderabad</span>
+    <span class="form-location-chip">Pune</span>
+    <span class="form-location-chip">Mumbai</span>
+    <span class="form-location-chip">Delhi</span>
+  </div>
+</div>
+</div>
         <div>
           <div class="form-contact-label">Business hours</div>
           <div class="form-contact-value">
